@@ -109,7 +109,7 @@ def clearChats():
                     cookies = {"urlgen":"\"{\\\"1.3.3.7\\\": 7922}:1hBpwV:rAqS0L7vKp0qUt1Mf-rcO8QwZ2w\"","ds_user":myDS_USER,"ds_user_id":myDS_USER_ID,"mid":myMID,"sessionid":mySessionID,"csrftoken":myCSRF,"rur":"ATN"}
                     r = requests.post("https://i.instagram.com/api/v1/direct_v2/threads/"+myDMList[i]+"/hide/", data=paramsPost, headers=headers, cookies=cookies)
                     if "Please wait a few minutes before you try again" in r.content.decode('utf-8'):
-                        print('Sleeping For 5 Minutes...')
+                        print('['+Fore.YELLOW+'!'+Fore.WHITE+']'+' Sleeping For 5 Minutes...')
                         time.sleep(300)
                     elif '{"status": "ok"}' in r.content.decode('utf-8'):
                         deletedDMS += 1
