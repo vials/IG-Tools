@@ -108,7 +108,7 @@ def clearChats():
                     headers = {"Accept":"*/*","X-IG-Capabilities":"36r/dw==","User-Agent":"Instagram 82.0.0.14.178 (iPhone9,3; iOS 12_0; en_US; en-US; scale=2.00; gamut=wide; 750x1334) AppleWebKit/420+","Connection":"close","X-IG-ABR-Connection-Speed-KBPS":"0","X-IG-Connection-Speed":"471kbps","Accept-Encoding":"gzip, deflate","Accept-Language":"en-US;q=1","X-IG-Connection-Type":"WiFi","X-IG-App-ID":"124024574287414","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}
                     cookies = {"urlgen":"\"{\\\"1.3.3.7\\\": 7922}:1hBpwV:rAqS0L7vKp0qUt1Mf-rcO8QwZ2w\"","ds_user":myDS_USER,"ds_user_id":myDS_USER_ID,"mid":myMID,"sessionid":mySessionID,"csrftoken":myCSRF,"rur":"ATN"}
                     r = requests.post("https://i.instagram.com/api/v1/direct_v2/threads/"+myDMList[i]+"/hide/", data=paramsPost, headers=headers, cookies=cookies)
-                    if "Please wait a few minutes before you try again" r.content.decode('utf-8'):
+                    if "Please wait a few minutes before you try again" in r.content.decode('utf-8'):
                         print('Sleeping For 5 Minutes...')
                         time.sleep(300)
                     elif '{"status": "ok"}' in r.content.decode('utf-8'):
