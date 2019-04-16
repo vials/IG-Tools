@@ -2,6 +2,8 @@ import requests
 from colorama import Fore, init
 init()
 
+reqLink = input('Enter RAW Pastebin URL: ')
+
 gayUsers = []
 
 with open('gayUsers.txt', 'r') as f:
@@ -13,7 +15,7 @@ def gayAuth():
     print('Welcome To Gay Auth')
     print('-'*20)
 
-    r = requests.get('https://www.pastebin.com/raw/nv58aVHJ')
+    r = requests.get(reqLink)
     for i in r.content.decode('utf-8').split():
         if i in gayUsers:
             print('['+Fore.GREEN+'+'+Fore.WHITE+']'+' Authenticated Gay User')
